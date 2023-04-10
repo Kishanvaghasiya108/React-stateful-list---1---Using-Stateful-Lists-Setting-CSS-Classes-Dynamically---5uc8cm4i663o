@@ -26,26 +26,25 @@ const data = {
     'Adventures of Shaktiman'
   ]
 }
+
 const App = () => {
-  const [year,setYear] = useState(null);
-  
+  const [year, setYear] = useState('');
 
   return (
     <div id="main">
       <select onChange={(e)=>{setYear(e.target.value)}}>
-        <option value={null}></option>
+        <option value=''></option>
         <option value={2018}>2018</option>
         <option value={2019}>2019</option>
         <option value={2020}>2020</option>
         <option value={2021}>2021</option>
         <option value={2022}>2022</option>
-
       </select>
       <div id='selected-year'>
-        {year === null ? "NO Year Selected" : "Selected Year is" + year}
+        {year === '' ? "no year selected" : "Selected year - " + year}
       </div>
       <div id='result'>
-        {year === null ? null :(
+        {year === '' ? null :(
           <ul>
             {data[year].map((e,i)=>(
               <li key={i}>{e}</li>
@@ -55,10 +54,8 @@ const App = () => {
         
         }
       </div>
-      
     </div>
   )
 }
-
 
 export default App;
