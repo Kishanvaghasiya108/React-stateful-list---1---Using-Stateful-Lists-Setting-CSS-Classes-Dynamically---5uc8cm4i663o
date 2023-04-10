@@ -45,7 +45,7 @@ const App = () => {
         {year === null ? "NO Year Selected" : "Selected Year is" + year}
       </div>
       <div id='result'>
-        {year == null ? null :(
+        {year === null ? null :(
           <ul>
             {data[year].map((e,i)=>(
               <li key={i}>{e}</li>
